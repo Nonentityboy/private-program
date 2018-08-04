@@ -11,4 +11,5 @@
   <view class="usermotto">
     <navigator url = "/pages/schoolnavigation/schoolnavigation" class="motto">开启西邮之旅</navigator>
   </view>
+  <view class="author">——Powered by EPI实验室软件部</view>
 </view>

@@ -46,11 +46,11 @@
 
   <view  class="postcontainer">联系我们:</view>
   <view class="postcontainer" style="margin-left:130rpx;">
-    <view >QQ:<text style="color:blue;">1138580559</text></view>
-    <view >Tel:<text style="color:blue;">13891316148</text></view>
-
+    <view >QQ:<text style="color:#0066ff;">1138580559</text></view>
+    <view >Tel:<text style="color:#0066ff;">13891316148</text></view>
+   
   </view>
-  
+    
 </view>
 <view style="margin-left:100rpx;margin-top:50rpx;margin-bottom:100rpx;float:left;">
     <button class="submit" bindtap="submittap">取消举报</button>
@@ -58,3 +58,4 @@
 <view style="margin-right:100rpx;margin-top:50rpx;margin-bottom:100rpx;float:right;">
     <button class="submit"  bindtap="submittap">提交举报</button>
 </view>
+   

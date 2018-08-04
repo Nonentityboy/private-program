@@ -1,4 +1,12 @@
 /**index.wxss**/
+page{
+   overflow:hidden;
+   position:fixed;
+   margin:0px;
+   background-size:100% 100%;
+   /* background-color:#CCEEFF; */
+   background-image:url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1532502792614&di=a89a967328c76df5d9aad10dd139e8b8&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201406%2F24%2F20140624003608_4UseG.jpeg')
+}
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -13,12 +21,12 @@
 }
 
 .userinfo-nickname {
-  color: #aaa;
+  color: #393739;
 }
 
 .usermotto {
   margin-top:600rpx;
-  border:1px solid #405f80;
+  border:1px solid #393739;
   width: 230rpx;
   height: 80rpx;
   border-radius: 5px;
@@ -30,5 +38,11 @@
   font-size:28rpx;
   font-weight: bold;
   line-height: 80rpx;
-  color: #405f80;
+  color: #393739;
+}
+.author{
+  position:absolute;
+  margin-top:730rpx;
+  font-size:30rpx;
+  float: right;
 }

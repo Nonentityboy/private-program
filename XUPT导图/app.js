@@ -56,8 +56,9 @@ App({
       })
     }
   },
-
+//锄禾日当午，只有前端苦。BUG改不完，我就不吃饭。
   globalData: {
-    userInfo: null
+    userInfo: null,
+    destination: "EPI666"
   }
 })

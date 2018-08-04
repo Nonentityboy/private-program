@@ -1,20 +1,25 @@
 {
   "pages": [
+      "pages/schoolnavigation/news",
     "pages/index/index",
+    "pages/logs/logs",
+    "pages/schoolnavigation/schoolnavigation", 
     "pages/schoolnavigation/store",
-    "pages/schoolnavigation/schoolnavigation",
-
-    "pages/schoolnavigation/news",
-
+  
     "pages/schoolnavigation/report",
-
-    "pages/logs/logs"
+    "pages/Navigation/navigation_car/navigation",
+    "pages/Navigation/navigation_car_detail/navigation",
+    "pages/Navigation/navigation_walk/navigation",
+    "pages/Navigation/navigation_bus/navigation",
+    "pages/Navigation/navigation_ride/navigation",
+    "pages/Navigation/navigation_walk_detail/navigation",
+    "pages/Navigation/navigation_ride_detail/navigation"
   ],
   "window": {
-    "backgroundColor": "#b3d4db",
+    "backgroundColor": "#0066ff",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#661AFF",
+    "navigationBarBackgroundColor": "#0066ff",
     "navigationBarTitleText": "西邮导图",
     "navigationBarTextStyle": "white"
-  }
+  }   
 }

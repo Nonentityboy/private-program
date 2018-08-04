@@ -1,26 +1,123 @@
 <view>
-  <view class="bottom_menu" style="background:{{StyleColor}};">
+  <view class="top_menu" style="background:{{StyleColor}};">
     <scroll-view>
-          <view bindtap="Showmarker" class="{{item.id==now_tab?'now':''}}"     data-id="{{item.id}}" wx:for="{{tab}}">{{item.title}}
+          <view bindtap="Showmarker" class="{{item.id===now_tab?'now':''}}"     data-id="{{item.id}}" wx:for="{{tab}}">{{item.title}}
           </view>
-         
-    </scroll-view>
-     
+    </scroll-view> 
   </view>
-
   <view>
-    <map id="map" 
-      longitude="{{long}}" 
-      latitude="{{lati}}" 
+    <map
+      wx:if="{{2 !== now_tab}}"
+      id="map" 
+      latitude="{{lati}}"
+      longitude="{{long}}"
       scale="16" 
       controls="{{controls}}"    
+      show-location
       bindcontroltap="controltap" 
       markers="{{markers}}" 
       bindmarkertap="markertap" 
       polyline="{{polyline}}" 
-      circles="{{circles}}" 
-      bindregionchange="regionchange" 
-      show-location style="width: 100%; height: 93vh;float:bottom;">
+      circles="{{circles}}"
+      class="expect"
+    >
+    </map>
+    <map
+      wx:if="{{2 === now_tab && openBottomPicker === true}}"
+      id="map" 
+      latitude="{{lati}}"
+      longitude="{{long}}"
+      scale="16" 
+      controls="{{controls}}"
+      show-location
+      bindcontroltap="controltap" 
+      markers="{{markers}}" 
+      bindmarkertap="markertap" 
+      polyline="{{polyline}}" 
+      circles="{{circles}}"
+      class="list"
+    >
+    </map>
+    <map
+      wx:if="{{2 === now_tab && openBottomPicker === false}}"
+      id="map" 
+      latitude="{{lati}}"
+      longitude="{{long}}"
+      scale="16" 
+      controls="{{controls}}"
+      show-location
+      bindcontroltap="controltap" 
+      markers="{{markers}}" 
+      bindmarkertap="markertap" 
+      polyline="{{polyline}}" 
+      circles="{{circles}}"
+      class="normal"
+    >
     </map>
   </view>
+    <view wx:if="{{2 === now_tab }}" style="float:bottom;margin-bottom:0;">
+      <view  class='picker-bottom'  bindtap="onPickBottomClick">
+        <view style="margin-left:100rpx;">共找到"餐饮"相关4个餐厅
+          <image wx:if="{{openBottomPicker === true}}" src="../../imgs/arrow1.png" style="margin-right:50rpx;width:20rpx;height:20rpx;">
+          </image>
+          <image wx:if="{{openBottomPicker === false}}" src="../../imgs/arrow2.png" style="margin-right:50rpx;width:20rpx;height:20rpx;">
+          </image>
+        </view>
+      </view>
+    </view>
+    
+    <scroll-view wx:if="{{ openBottomPicker === true }}" scroll-y class="{{openBottomPicker ? 'slidup' : ''}}">
+      <view style="width:750rpx;height:190rpx;border-bottom: 1px solid #ededed; " bindtap='xuriyuan'>
+        <image src="../../imgs/xuriyuan.png" style='width:180rpx;height:120rpx;padding:35rpx;float:left;'></image>
+        <view>
+          <view style="float:left;width:400rpx;">
+            <view style="margin-bottom:5rpx;margin-top:15rpx;">旭日苑</view>
+            <view style='font-size:26rpx;'>
+              <image src="../../imgs/example.png" style='width:30rpx;height:30rpx;'></image>
+                旭日皇家大酒店，味道棒极了，每次聚会所去的不二之选！是西邮学子们的最爱。
+            </view>
+          </view>
+          <image src="../../imgs/there.png" style="float:right;width:100rpx;height:100rpx;margin-top:40rpx;"></image>
+        </view>
+      </view>
+      <view style="width:750rpx;height:190rpx;border-bottom: 1px solid #ededed; "  bindtap='dongshengyuan'>
+        <image src="../../imgs/dongshengyuan.png" style='width:180rpx;height:120rpx;padding:35rpx;float:left;'></image>
+        <view>
+          <view style="float:left;width:400rpx;">
+            <view style="margin-bottom:5rpx;margin-top:15rpx;">东升苑</view>
+            <view style='font-size:26rpx;'>
+              <image src="../../imgs/example.png" style='width:30rpx;height:30rpx;' ></image>
+                东升苑，东区学子们魂牵梦绕的地方，这里便是东区学子们的天堂。So special !
+            </view>
+          </view>
+          <image src="../../imgs/there.png" style="float:right;width:100rpx;height:100rpx;margin-top:40rpx;"></image>
+        </view>
+      </view>
+      <view style="width:750rpx;height:190rpx;border-bottom: 1px solid #ededed; "  bindtap='meiguang'>
+        <image src="../../imgs/meiguang.png" style='width:180rpx;height:120rpx;padding:35rpx;float:left;'></image>
+        <view>
+          <view style="float:left;width:400rpx;">
+            <view style="margin-bottom:5rpx;margin-top:15rpx;">美食广场</view>
+            <view style='font-size:26rpx;'>
+              <image src="../../imgs/example.png" style='width:30rpx;height:30rpx;' ></image>
+                美食广场，这里色香味俱全的地方，民族餐厅？旋转香锅？这里应有尽有！
+            </view>
+          </view>
+          <image src="../../imgs/there.png" style="float:right;width:100rpx;height:100rpx;margin-top:40rpx;"></image>
+        </view>
+      </view>
+      <view style="width:750rpx;height:190rpx;border-bottom: 1px solid #ededed; "  bindtap='mixuebingcheng'>
+        <image src="../../imgs/mixuebingcheng.png" style='width:180rpx;height:120rpx;padding:35rpx;float:left;'></image>
+        <view>
+          <view style="float:left;width:400rpx;">
+            <view style="margin-bottom:5rpx;margin-top:15rpx;">蜜雪冰城</view>
+            <view style='font-size:26rpx;'>
+              <image src="../../imgs/example.png" style='width:30rpx;height:30rpx;' ></image>
+                当柠檬水刺激着你的味蕾，你是否不舍咽下？来吧，恋爱的滋味尽在蜜雪冰城。
+            </view>
+          </view>
+          <image src="../../imgs/there.png" style="float:right;width:100rpx;height:100rpx;margin-top:40rpx;"></image>
+        </view>
+      </view>
+    </scroll-view>
 </view>
